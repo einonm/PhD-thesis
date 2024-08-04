@@ -454,7 +454,7 @@ if formatting == "LaTeX":
     display(Latex(r"\normalsize"))
 # -
 
-# This trend is repeated in table \ref{tab:ht_deriv_drugs_c4}, consisting of derived statistics from the data in table \ref{tab:ht_cmatrix_drugs_c4}, with both proximity and brain tissue-combined annotations showing the greatest ability to identify a difference between significant enrichment rates or treatment and non-treatment drugs as evidenced by the very low Fisher p-values. The brain-combined annotation also has the highest false discovery rate (FDR), the proportion of non-treatment drugs that are significant, which indicates it is the annotation with the greatest possibility of finding a novel undiscovered treatment drug.
+# This trend is repeated in table \ref{tab:ht_deriv_drugs_c4}, consisting of derived statistics from the data in table \ref{tab:ht_cmatrix_drugs_c4}, with both proximity and brain tissue-combined annotations showing the greatest ability to identify a difference between significant enrichment rates or treatment and non-treatment drugs as evidenced by the very low Fisher p-values.
 #
 # \newpage
 

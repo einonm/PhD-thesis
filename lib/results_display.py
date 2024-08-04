@@ -7,7 +7,7 @@
 #       format_version: '1.5'
 #       jupytext_version: 1.13.8
 #   kernelspec:
-#     display_name: Python 3
+#     display_name: Python 3 (ipykernel)
 #     language: python
 #     name: python3
 # ---
@@ -2184,7 +2184,10 @@ def show_treatment_drug_stats(dfs, db_col, sig):
 
         specificity = len(TN_df) / (len(TN_df) + len(FP_df))
 
-        fdr = len(FP_df) / (len(FP_df) + len(TN_df))
+        if  ((len(FP_df) + len(TP_df)) == 0):
+            fdr = 1
+        else:
+            fdr = len(FP_df) / (len(FP_df) + len(TP_df))
 
         new_row = {
             "DTI DB": table_dti,

@@ -206,7 +206,7 @@ display(Latex(r"$$"))
 # And the False Discovery Rate (FDR), the proportion of non-treatment drugs that are significant can be found using:
 
 display(Latex(r"$$"))
-display(Latex(r"FDR = \frac{FP} {FP + TN}"))
+display(Latex(r"FDR = \frac{FP} {FP + TP}"))
 display(Latex(r"$$"))
 
 # Fisher's exact test is used to determine whether or not there is a significant relationship between two categorical variables, with the null hypothesis stating that no relationship exists and the variables are independent. The alternate hypothesis is therefore one of a relationship between the variables, and that they are not independent. Because this relationship may be in either direction, a two-tailed Fisher's exact test is used, with a chosen significance level of 0.05.
@@ -1016,7 +1016,7 @@ if formatting == "LaTeX":
 if formatting == "LaTeX":
     display(Latex(r"\newpage"))
 
-# As with the hypertension results, the DUGGIE analysis increase over the STITCH analysis in significant drugs identified does not translate into an increase of significant treatment drugs found. The STITCH analysis again has a higher sensitivity as it is more successful in picking out treatment drugs. Conversely, the ability of the DUGGIE gene-set analysis to reject non-treatment drugs is higher than that for STITCH, and subsequently the FDR is lower. Further work would be needed to discern if these false positives are genuine or potential novel treatment drugs.
+# As with the hypertension results, the DUGGIE analysis increase over the STITCH analysis in significant drugs identified does not translate into an increase of significant treatment drugs found. The STITCH analysis again has a higher sensitivity as it is more successful in picking out treatment drugs. However, the DUGGIE gene-set analysis is  successful at marking most of the greater number of non-treatment drugs it covers as non-significant, but as the number of non-significant treatment drugs is also higher, the DUGGIE analysis FDR is slightly higher that the FDR for the STITCH analysis. Further work would be needed to discern if these false positives are genuine or potential novel treatment drugs.
 #
 # The Fisher p-values, along with the sensitivity and specificity are affected by the very small number of true positives found for DUGGIE and STITCH, 5 and 7 respectively. Although this gives DUGGIE a lower significant Fisher p-value, the ROC curve in figure \ref{fig:hc_prox_roc} shows that over all significance thresholds, the metrics are closer with an AUC for STITCH of 0.93 and 0.88 for DUGGIE. The large improvement seen in the Mann-Whitney p-value for DUGGIE over STITCH is reflected in the box plot of figure \ref{fig:hc_boxplot_treat_nontreat}, where the peak for DUGGIE treatment drug q-values shows a narrower width covering a larger number of drugs compared to STITCH treatment drugs.
 

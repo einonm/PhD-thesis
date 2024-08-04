@@ -1,0 +1,27 @@
+Poster Abstract - A Genomic Medicine Approach to Identifying Novel Drug Targets
+-------------------------------------------------------------------------------
+
+Background
+----------
+
+The world is experiencing an increasing incidence of life-changing neuropsychiatric disorder diagnoses, with schizophrenia diagnoses climbing by 39% between 1990 and 2017 to 15.5 million. As few pharmaceutical treatment options are available the outlook for sufferers can be daunting. Drug companies and research organisations are investing large sums into therapeutic solutions, but existing methods to equip clinicians with new drug treatment options have to date achieved a very low rate of success.
+One recent promising direction in identifying possible therapeutic drugs at a faster and more cost-effective rate is to mine the extensive molecular, target and interaction data available for currently approved drugs to gauge their suitability for novel repurposing to treat neuropsychiatric conditions. A popular technique to identify suitable drugs is competitive gene-set analysis, a statistical method that can identify over-represented, or enriched, genes within a larger pool and can be used to rank drugs, annotated by their set of gene targets in their order of association with a disease.
+
+Methods
+-------
+
+This study used competitive gene set enrichment analysis to seek robust genetic evidence which identifies drug repurposing opportunities for several neuropsychiatric diseases - schizophrenia, Alzheimer’s disease and Parkinson’s disease. Instead of the more usual positional annotation to calculate disease gene associations from GWAS data, openly available and experimentally obtained functional quantitative trait loci were employed to provide a mapping of SNP associations to genes.
+Drug target data was gathered from a wide search of available open databases to produce the largest known dataset of it's kind, named DUGGIE, an abbreviation of ‘DrUG-Gene IntEractions’. Gene set analysis was carried out using the MAGMA tool.
+Initially better understood medical conditions, hypertension and hypercholesterolaemia were analysed to initially validate the data and approaches used. Using the MAGMA analysis pipeline with the most effective combination of drug target and annotation data found, the three neuropsychiatric diseases were analysed and the significant drugs identified ranked by association strength.
+
+Results
+-------
+
+DUGGIE was found to be adept at identifying drugs associated with hypercholesterolemia and hypertension, finding treatment drugs and rejecting non-treatment drugs with AUC values ranging between 0.74 and 0.94.
+Preliminary results on applying the analysis pipeline to schizophrenia, Alzheimer's and Parkinson's identified several drugs significantly associated with each disease.
+
+Discussion
+----------
+
+The largest collection of drug-target gene data to date, DUGGIE, was collected and found to be more effective than previous databases at exploring drug-disease associations using gene set enrichment.
+

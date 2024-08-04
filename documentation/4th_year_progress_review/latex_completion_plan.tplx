@@ -1,0 +1,31 @@
+((*- extends 'article.tplx' -*))
+
+((* block packages *))
+((( super() )))
+% citations as superscripts
+\usepackage[superscript]{cite}
+
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage[font={scriptsize,bf}]{caption}
+% Sets spacing between lines
+\usepackage{setspace}
+% Sets spacing between paragraphs
+\usepackage{parskip}
+((* endblock packages *))
+
+% Disable input cells
+((* block input_group *))
+((* endblock input_group *))
+
+((* block title *))
+\title{
+\huge
+Thesis Plan: A Genomic Medicine Approach To Identifying Novel Drug Targets
+}
+((* endblock title *))
+((* block author *))\author{Mark Einon} ((* endblock author *))
+((* block date *))\date{May 14, 2020}((* endblock date *))
+
+((* block predoc *))
+\maketitle
+((* endblock predoc *))

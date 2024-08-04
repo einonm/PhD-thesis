@@ -1,0 +1,59 @@
+((*- extends 'article.tplx' -*))
+
+((* block packages *))
+((( super() )))
+% citations as superscripts
+\usepackage[superscript]{cite}
+
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage[font={scriptsize,bf}]{caption}
+((* endblock packages *))
+
+% Disable input cells
+((* block input_group *))
+((* endblock input_group *))
+
+((* block title *))
+\title{
+\huge Drug repositioning prediction for Parkinson's disease: A functional approach
+\vspace{3cm}
+}
+((* endblock title *))
+((* block author *))\author{Mark Einon} ((* endblock author *))
+((* block date *))\date{}((* endblock date *))
+
+((* block predoc *))
+\maketitle
+((* block abstract *))
+\begin{center}
+  {
+    \small PhD Staff Candidate \\
+    Student ID: 986033520 \\
+  }
+  \vspace{4cm}
+  \begin{tabular}{rl}
+    Main Supervisor: & Professor Nigel Williams \\
+    Co-supervisors: & Professor Lesley Jones \\
+                    & Professor Peter Holmans \\
+                    & Professor Sir Michael Owen \\
+  \end{tabular}
+  \vspace{5cm}
+  {
+
+  2nd Year Annual Formal Progress Review \\
+  Institute of Psychological Medicine and Clinical Neurosciences \\
+  School of Medicine \\
+  Cardiff University \\
+  }
+\end{center}
+\thispagestyle{empty}
+\newpage
+\tableofcontents
+((* endblock abstract *))
+((* endblock predoc *))
+
+((* block bibliography *))
+\newpage
+\bibliographystyle{einon}
+\bibliography{jupyter}
+((* endblock bibliography *))

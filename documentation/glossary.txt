@@ -1,0 +1,37 @@
+Affinity - Binding affinity is the strength of the binding interaction between a single biomolecule (e.g. protein or DNA) to its ligand/binding partner (e.g. drug or inhibitor). Binding affinity is typically measured and reported by the equilibrium dissociation constant (KD), which is used to evaluate and rank order strengths of bimolecular interactions. The smaller the KD value, the greater the binding affinity of the ligand for its target.
+
+Agonist - A chemical that binds to a receptor and activates the receptor to produce a biological response.
+
+Antagonist - A chemical that blocks or dampens a biological response by binding to and blocking a receptor rather than activating it like an agonist.
+
+Assay - An investigative procedure for qualitatively assessing or quantitatively measuring the presence, amount, or functional activity of a target entity (the analyte).
+
+Efficacy - Efficacy (Emax) is the maximum effect which can be expected from this drug (i.e. when this magnitude of effect is reached, increasing the dose will not produce a greater magnitude of effect)
+
+Enzyme - A biological catalyst that accelerates the reaction to convert the substrate to Products.
+
+False positive rate - The rate at which false results are called significant. E[V/m0]. (Closely related to the Type I error rate - falsely rejecting the null hypothesis).
+
+Family wise error rate (FWER) - The probability of at least one false positive Pr(V >= 1)
+
+In Vitro - Studies performed using cells or substances outside the normal (biological) environment
+
+Inducer - Increases an Enzyme's reaction rate.
+
+Inhibitor - Decreases an enzyme's reaction rate.
+
+Ligand - A ligand is a substance that forms a complex with a biomolecule to serve a biological purpose. Binding occurs by intermolecular forces, such as ionic bonds, hydrogen bonds and Van der Waals forces. https://en.wikipedia.org/wiki/Ligand_(biochemistry)
+
+Pharmacodynamics - The study of the effects of drugs on the body.
+
+Pharmacokinetics - The study of the effects of the body on drugs.
+
+Potency - Potency is the concentration (EC50) or dose (ED50) of a drug required to produce 50% of that drug’s maximal effect.
+
+Primary/therapeutic/efficacy Target - The protein targeted by a drug that is directly responsible for the claimed therapeutic efficacies.
+
+Sensitivity - measures the proportion of positives that are correctly identified
+
+Specificity - measures the proportion of negatives that are correctly identified
+
+Substrate - A molecule that interacts with an Enzyme to produce a Product.

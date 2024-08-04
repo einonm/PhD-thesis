@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Mermaid Quick Test Page</title>
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      theme: 'forest',
+      themeCSS: '.node rect { fill: cyan; }',
+      logLevel: 3,
+    });
+  </script>
+  <script>
+    function testClick(nodeId) {
+      console.log("clicked", nodeId)
+      var originalBgColor = document.querySelector('body').style.backgroundColor
+      document.querySelector('body').style.backgroundColor = 'yellow'
+      setTimeout(function() {
+        document.querySelector('body').style.backgroundColor = originalBgColor
+      }, 100)
+    }
+  </script>
+  <div class="mermaid">
+    graph LR
+    B[All_drug_target_DBs_analysis.py] -.-> A[/"all_dgi_targets_atc_ensembl.csv (DUGGIE)"/]
+    C[/jointall_targets_8dbs.tsv/] -.-> B
+    D[Merge_all_drug_target_DBs.py] -.-> C
+    E[/ttd_ATC_targets.csv/] -.-> D
+    F[/drugbank_atc_targets.csv/] -.-> D
+    G[/dgidb_targets.csv/] -.-> D
+    H[/stitch_targets2.csv/] -.-> D
+    I[/gtopdb_targets.csv/] -.-> D
+    J[/t3db_targets.tsv/] -.-> D
+    K[/dsigdb_targets.tsv/] -.-> D
+    L[/drugcentral_targets.tsv/] -.-> D
+    C -.-> M[STITCH_drug_target_DBs_analysis.py]
+    M -.-> N[/"stitch_dgi_targets_atc_ensembl.csv (STITCH)"/]
+    O[extract_PubChem_from_TTD.py] -.-> E
+    P[extract_PubChem_from_drugbank.py] -.-> F
+    Q[extract_PubChem_from_DGIdb.py] -.-> G
+    R[extract_PubChem_from_stitch.py] -.-> H
+    S[extract_PubChem_from_GtoPdb.py] -.-> I
+    T[extract_PubChem_from_T3DB.py] -.-> J
+    U[extract_PubChem_from_DsigDB.py] -.-> K
+    V[extract_PubChem_from_DrugCentral.py] -.-> L
+  </div>
+</body>
+</html>

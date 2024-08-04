@@ -1,0 +1,17 @@
+.ipynb_checkpoints/
+__pycache__
+*.ipynb
+/data
+*.aux
+*.bbl
+*.blg
+*.toc
+*.out
+*.log
+*.tex
+*.tsv
+*.pdf
+*.odt
+*_files/
+*.lof
+*.lot

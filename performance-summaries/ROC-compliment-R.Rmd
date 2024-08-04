@@ -1,0 +1,145 @@
+---
+jupyter:
+  jupytext:
+    formats: ipynb,Rmd
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.10.2
+  kernelspec:
+    display_name: R
+    language: R
+    name: ir
+---
+
+<script>
+code_show=true; 
+function code_toggle() {
+ if (code_show){
+ $('div.input').hide();
+ } else {
+ $('div.input').show();
+ }
+ code_show = !code_show
+} 
+$( document ).ready(code_toggle);
+</script>
+
+The raw code for this R IPython notebook is by default hidden for easier reading.
+To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>.
+
+
+# Why does the FPR/TPR and Mann-Whitney U value only match the ROC curve when the compliment of q-values is used to plot?
+
+This notebook uses two data sets of association q-values (named DUGGIE and STITCH) with each q-value set having a binary classification.
+
+Issue: We can plot an ROC curve for both DUGGIE and STITCH for the classifiers, but the calculated FPR and TPR at a significance threshold of 5% values only match the ROC when the compliment of the q-values is plotted.
+
+```{r}
+if (!require(tidyverse)) {                                                                                                                                                                                          
+    install.packages('tidyverse', dependencies=T)                                                                                                                                                                   
+}
+if (!require(PRROC)) {
+    install.packages('PRROC', dependencies=T)
+}
+dummy = library(tidyverse)
+library(PRROC)
+```
+
+```{r}
+duggie_df <- read.csv('prox_duggie_I10_tmp.csv', sep='\t')
+stitch_df <- read.csv('prox_stitch_I10_tmp.csv', sep='\t')
+```
+
+The raw data from both DUGGIE and STITCH looks like this, and we will use the Q.prox column (p value, lower values are predictor of a treatment drug) as predictor values and the colour_id column as the binary classifier (1 = treatment drug, 0 = non-treatment drug).
+
+```{r}
+head(duggie_df)
+```
+
+```{r}
+duggie_df$neg.log.q = -log(duggie_df[[4]])
+stitch_df$neg.log.q = -log(stitch_df[[4]])
+```
+
+```{r}
+duggie_roc <- roc.curve(scores.class0 = duggie_df[[7]], weights.class0 = duggie_df$colour_id, curve=TRUE)
+stitch_roc <- roc.curve(scores.class0 = stitch_df[[7]], weights.class0 = stitch_df$colour_id, curve=TRUE)
+```
+
+Taking this q-value and colour_id raw data from both the DUGGIE and STITCH tables, we plot a ROC curve for each:
+
+```{r}
+plot(duggie_roc, col=2, main=paste('STITCH(GREEN) AUC=', stitch_roc$auc, '\nDUGGIE(RED)'), lty = 2)
+plot(stitch_roc, col=3, lty=3, add=TRUE)
+```
+
+We can also record a contingency table for each of DUGGIE and STITCH at a 5% q-value significance level and calculate the fisher exact test p-value, Mann-Whitney U and p-values, and also the False Positive Rate (FPR) and True Positive Rate (TPR or sensitivity) at this significance level.
+
+```{r}
+summarise_stats <- function(df, col, sig) {
+    treatment_df <- df[df$colour_id != 0,]
+    nontreatment_df <- df[df$colour_id == 0,]
+    
+    TP <- nrow(treatment_df %>% filter(.[[col]] < sig))
+    FN <- nrow(treatment_df %>% filter(.[[col]] >= sig))
+    TN <- nrow(nontreatment_df %>% filter(.[[col]] >= sig))
+    FP <- nrow(nontreatment_df %>% filter(.[[col]] < sig))
+    
+    MW <- wilcox.test(df[[col]] ~ colour_id, data = df, na.rm=TRUE, 
+                     paired=FALSE)
+    
+    fisher <- fisher.test(matrix(c(TP, FP, FN, TN), nrow=2))
+    
+    TPR <- TP / (TP + FN)
+    FPR <- FP / (FP + TN)
+    
+    ret_list <- list('TP'=TP, 'FP'=FP, 'TN'=TN, 'FN'=FN, 
+                     'fisher.p'=fisher$p.value, 'MW.p'=MW$p.value, 'MW.U'=MW$statistic,
+                     'TPR'=TPR , 'FPR'=FPR)
+    return(ret_list)
+}
+```
+
+```{r}
+duggie_ls <- summarise_stats(duggie_df, 4, 0.05)
+```
+
+```{r}
+stitch_ls <- summarise_stats(stitch_df, 4, 0.05)
+```
+
+```{r}
+rbind(data.frame(as.list(duggie_ls), row.names='DUGGIE'), 
+      data.frame(as.list(stitch_ls), row.names='STITCH'))
+```
+
+BUT! The TPR and FPR values in this table correspond to the compliment ROC curve, where (1 - q-value) is plotted for the binary classifier. Also the Mann-Whitney U value corresponds to an AUC that is equal to (1 - AUC) of the previous ROC curves - as AUC = U/(n1 * n2), where n1 = num positive predictions, n2 = num negative predictions.
+
+e.g. 
+
+AUC(DUGGIE) = MW.U(DUGGIE)/ (positives(DUGGIE) * negatives(DUGGIE))
+
+AUC(DUGGIE) = 109875 / ((28 + 96) * (31 + 1163)) = 0.74212
+
+and 1 - 0.74212 = 0.25788, the AUC from the previous ROC curve.
+
+The compliment ROC curve, where (1 - q-value) is used, is:
+
+```{r}
+duggie_roc <- roc.curve(scores.class0 = 1 - duggie_df[[3]], weights.class0 = duggie_df$colour_id, curve=TRUE)
+stitch_roc <- roc.curve(scores.class0 = 1 - stitch_df[[3]], weights.class0 = stitch_df$colour_id, curve=TRUE)
+plot(duggie_roc, col=2, main=paste('STITCH(GREEN) AUC=', stitch_roc$auc, '\nDUGGIE(RED)'), lty = 2)
+plot(stitch_roc, col=3, lty=3, add=TRUE)
+```
+
+As can be seen, the points corresponding to (FPR, TPR) from the table above, for DUGGIE of (0.026, 0.226) and for STITCH of (0.021, 0.366) are present on these compliment curves, but not on the original curves. The Mann Whitney U-value also corresponds to the compliment curve.
+
+**Is using the compliment of the q-value to match the direction of the classifier a valid thing to do?**
+
+(Also if so - why is the AUC of STITCH greater than that for DUGGIE, whilst the Mann-Whitney p-values favour DUGGIE?)
+
+```{r}
+
+```

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Whole pipeline</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <!--script src="./mermaid.js"></script-->
+  <script>
+    mermaid.initialize({
+      theme: 'forest',
+      themeCSS: '.node rect { fill: cyan; }',
+      logLevel: 3,
+      startOnLoad:true,
+      flowchart:{
+        useMaxWidth:false,
+      }
+    });
+  </script>
+  <div class="mermaid">
+    graph TB
+
+    subgraph Proximal Annotation
+        J[/gwas/gene_atlas_snps/gene_atlas.loc/] -.-> K
+        H[/magma_auxiliary_files/g1000_eur/NCBI37.3.gene.loc/] -.-> K
+        K[magma --annotate] -.-> I
+        G[/wrangling/Ensembl_pos.tsv/] -.->L
+        I[/gwas/gene_atlas_snps/magma_gene_atlas.prox/] -.-> L
+        L[gene_annotation/Convert_prox_annot_file_to_ensembl.py] -.-> SE
+    end
+
+    subgraph QTL Annotation
+        QA[/QTLs/GTEx/v7/*.signifpairs.txt/] -.-> QB[qtl/run_eqtl_parsing.sh]
+        QB --> QF[qtl/Parse_eQTL_data-nb.py]
+        QF -.-> QC[/qtl/qtls-all/*.gene.annot/]
+        QC -.-> QD[gene_annotation/combine_gene_annotation_files.py]
+        QD -.-> QE[/magma_analysis/combined.gene.annot-allQTLs/]
+    end
+
+    subgraph Hybrid/Hybridboth Annotation
+        QE -.-> HA[gene_annotation/Functional_and_positional_hybrid_dataset.py]
+        SE -.-> HA
+        HA -.-> HB[/magma_analysis/hybrid.gene.annot-allQTLs/]
+    end
+
+    QE -. or .-> SB
+    SE[/wrangling/magma_gene_atlas.prox.genes.annot.ensembl/] -. or .-> SB
+    HB -. or .-> SB
+
+    subgraph Gene Analysis
+        SB[magma_gene_analysis.sh]
+        SB -.-> SG[/magma_analysis/magma_results/GA_E78/magma_gene_result_PART/]
+        SG -.-> SC
+        SC -.-> SH[/magma_analysis/magma_results/GA_E78/magma_gene_result/]
+    end
+
+    subgraph Geneset Analysis
+        SD --> SI[magma_geneset_analysis.sh]
+	    SI -.-> ZV
+    end
+
+    SF[/gwas/imputed.allWhites.clinical_c_E78-filtered.csv/] -.-> SB
+    SH -.-> SI
+
+    subgraph Summary Results Analysis
+        SH & ZZ[/target-dbs/all_dgi_targets_atc_ensembl.csv/] -.-> Z[performance_summary_GA_E78.py]
+        ZV[/magma_analysis/magma_results/GA_E78/magma_geneset_results/] -.-> Z
+        ZW[/wrangling/NCBI37.3.ensembl.gene.loc/] -.-> Z
+        ZX[/magma_analysis/GO_ALL_PC_20-2000_MAGMA.LH.ensembl.druggable.txt/] -.-> Z
+        ZY[/target-dbs/stitch_dgi_targets_atc_ensembl.csv/] -.-> Z
+    end
+
+    SA --> SD[slurm_magma_geneset_analysis.sh]
+    SA --> SC[magma_gene_analysis-batchmerge.sh]
+    SA[slurm_run_magma.sh] --> SB
+
+  </div>
+</body>
+</html>

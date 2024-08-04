@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pipeline Summary</title>
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">
+</head>
+<body>
+  <script src="./mermaid.js"></script>
+  <script>
+    mermaid.initialize({
+      theme: 'forest',
+      themeCSS: '.node rect { fill: cyan; }',
+      logLevel: 3,
+    });
+  </script>
+  <script>
+    function testClick(nodeId) {
+      console.log("clicked", nodeId)
+      var originalBgColor = document.querySelector('body').style.backgroundColor
+      document.querySelector('body').style.backgroundColor = 'yellow'
+      setTimeout(function() {
+        document.querySelector('body').style.backgroundColor = originalBgColor
+      }, 100)
+    }
+  </script>
+  <div class="mermaid">
+    graph TB
+    D[/"gene_atlas_snps/snps.pos.maf.tsv (extracted from GWAS data)" /] --> E
+    E[gene_annotation/gene_annotation_ensembl.py] --> F
+    F[/gene_atlas_snps/gene_atlas.loc/] --SNP positions--> G
+    C[/magma_auxiliary_files/NCBI37.3.gene.loc/] --> H
+    H[gene_annotation/Convert-magma-gene-loc-file-to-ensembl-nb.py] --> K
+    K[/NCBI37.3.ensembl.gene.loc/] --Gene positions--> G
+    G[gene_annotation/create_magma_prox_annot.sh] --> I
+    I[/gene_atlas_snps/magma_gene_atlas.prox.genes.annot/] --> L
+    L[gene_annotation/Convert_prox_annot_file_to_ensembl.py] --Positional gene annotations--> M[/wrangling/magma_gene_atlas.prox.genes.annot.ensembl/]
+  </div>
+</body>
+</html>

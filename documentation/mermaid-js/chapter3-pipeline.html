@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Mermaid Quick Test Page</title>
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      theme: 'forest',
+      themeCSS: '.node rect { fill: cyan; }',
+      logLevel: 3,
+    });
+  </script>
+  <script>
+    function testClick(nodeId) {
+      console.log("clicked", nodeId)
+      var originalBgColor = document.querySelector('body').style.backgroundColor
+      document.querySelector('body').style.backgroundColor = 'yellow'
+      setTimeout(function() {
+        document.querySelector('body').style.backgroundColor = originalBgColor
+      }, 100)
+    }
+  </script>
+  <div class="mermaid">
+    graph TD
+    A[slurm_run_magma.sh] --> B[magma_gene_analysis.sh]
+    A --> C[magma_gene_analysis-batchmerge.sh]
+    A --> D[slurm_magma_geneset_analysis.sh]
+    E[/"imputed.allWhites.clinical_c_E78-filtered.csv\n (Disease GWAS summary)"/] -.-> B
+    F[/"magma_g1000eur_NCBI37.3.prox.genes.annot.ensemble\n (Proximity annotation)"/] -.-> B
+    B -.-> G[/"magma_gene_result-GA_E78-prox-108b_both.batch[1-22]_22.genes.raw\n (MAGMA gene batch results)"/]
+    G -.-> C
+    C -.-> H[/"magma_gene_result-GA_E78-prox-108b_both.genes.raw\n(MAGMA gene result)"/]
+    H -.-> D
+    I[/"all_dgi_targets_atc_ensembl.csv\n(Drug-Gene Interaction DB - DUGGIE)"/] -.-> D
+    D -.-> J[/"magma_geneset_result-GA_E78-prox-108b_both-duggie.gsa.out\n(MAGMA geneset association results)"/]
+    K[/"DGI DB = DUGGIE\nannotation = prox\n GWAS = GA_E78 (Hypercholesterolemia)\n Run ID = 108b_both"/] -.-> A
+  </div>
+</body>
+</html>

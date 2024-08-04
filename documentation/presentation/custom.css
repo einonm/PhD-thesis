@@ -1,0 +1,9 @@
+/*.reveal .slides {
+    background:url("jupyter.png")
+}*/
+
+div.frontpage {
+  background: url(bug.jpg) no-repeat right center;
+  background-size: cover;
+  padding: 5px 0 5px 25px;
+}

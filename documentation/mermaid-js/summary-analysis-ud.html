@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Mermaid Quick Test Page</title>
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">
+</head>
+<body>
+  <script src="./mermaid.js"></script>
+  <script>
+    mermaid.initialize({
+      theme: 'forest',
+      themeCSS: '.node rect { fill: cyan; }',
+      logLevel: 3,
+    });
+  </script>
+  <script>
+    function testClick(nodeId) {
+      console.log("clicked", nodeId)
+      var originalBgColor = document.querySelector('body').style.backgroundColor
+      document.querySelector('body').style.backgroundColor = 'yellow'
+      setTimeout(function() {
+        document.querySelector('body').style.backgroundColor = originalBgColor
+      }, 100)
+    }
+  </script>
+  <!--div class="mermaid">
+    graph LR
+    I[/Functional Gene Annotations/] - -> L
+    K[/Disease GWAS SNP P-values/] - -> L[Disease-Gene Analysis]
+    L - -> M[/Disease-Gene Z-scores/]
+    M - -> P[Gene Set Enrichment Analysis]
+    O[/Drug-Target Gene Interactions/] - -> P
+    P - -> Q[/Drug-Disease Associations/]
+  </div-->
+  <div class="mermaid">
+    graph TD
+    I[/Gene Annotations/] --> L
+    K[/Disease GWAS SNP P-values/] --> L[Disease-Gene Analysis]
+    L --> M[/Disease-Gene Z-scores/]
+    M --> P[Gene Set Enrichment Analysis]
+    O[/Drug-Target Gene Interactions/] --> P
+    P --> Q[/Drug-Disease Associations/]
+  </div>
+</body>
+</html>

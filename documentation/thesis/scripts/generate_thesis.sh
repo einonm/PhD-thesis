@@ -14,8 +14,7 @@ JDIR=~/jupyter-notebooks
 conda activate $JDIR
 
 # The list of individual chapter and appendix notebooks
-SECTIONS=("${TEX}/preliminary_pages/Declarations"
-          "${TEX}/preliminary_pages/Acknowledgements"
+SECTIONS=("${TEX}/preliminary_pages/Acknowledgements"
           "${TEX}/preliminary_pages/Summary"
           "${TEX}/preliminary_pages/Abbreviations"
           "${TEX}/chapter01/Chapter01_Introduction"

@@ -215,7 +215,7 @@ display(Latex(r"$$"))
 #
 # #### Mann-Whitney test and the Receiver-Operator Characteristic
 #
-# The final column in the derived metrics table lists the Mann-Whitney p-value from a test of all significant and non-significant q-values between the treatment and non-treatment drug groups. This measures the ability of each analysis to discern treatment from non-treatment drugs without imposing a significance threshold, a measurement also explored visually using plotted receiver-operator characteristic (ROC) curves. Also plotted was a boxplot graph of the data sets used to calculate the Mann-Whitney p-values, highlighting the characteristics of each drug target interaction database's analysis in differentiate between treatment and non-treatment drug groups.
+# The final column in the derived metrics table lists the Mann-Whitney p-value from a test of all significant and non-significant q-values between the treatment and non-treatment drug groups. This measures the ability of each analysis to discern treatment from non-treatment drugs without imposing a significance threshold, a measurement also explored visually using plotted receiver-operator characteristic (ROC) curves. Also plotted was a boxplot graph of the data sets used to calculate the Mann-Whitney p-values, highlighting the characteristics of each drug target interaction database's analysis in differentiating between treatment and non-treatment drug groups.
 
 # #### P-value correlations
 #

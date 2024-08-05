@@ -121,7 +121,7 @@ if formatting == "LaTeX":
 # * the interaction data is manually curated by experts, not scraped directly by an algorithm into the database
 # * the interactions are validated directly by experimental evidence
 # * the targets in the drug-gene interactions are human proteins/genes
-# * any drug target definition defined and used to qualify inclusion into the database is compatible with the definition used for this study.
+# * any drug target definition used to qualify inclusion into the database is compatible with the definition used for this study.
 #
 # To ascertain if each database meets the criteria of including only targets that have a direct interaction with a drug, the relevant database literature and online documentation was searched with any description contributing to a target definition recorded.
 

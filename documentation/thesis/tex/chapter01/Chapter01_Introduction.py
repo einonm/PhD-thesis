@@ -176,7 +176,7 @@ if formatting == "LaTeX":
 #
 # A drug-target gene interaction database provides the collection of gene sets needed to perform a gene set enrichment analysis against the set of genes tested for association with a disease. There are many freely available sources of drug-target interactions, with the observation that each may define a drug target and provide evidence for inclusion differently. In order to gain the broadest, most complete set of interactions, data from these individual sources were combined, and in combining them a compatible definition of a drug target determined along with consistent schemes for identifying drugs, such as Anatomical Therapeutic Chemical (ATC) codes<citet data-cite="noauthor_anatomical_2017"><sup>atc</sup></citet>, and targets, such as Entrez gene IDs<citet data-cite="brown_gene_2015"><sup>brown</sup></citet> or UniProt protein IDs<citet data-cite="uniprot_consortium_uniprot_2018"><sup>uniprot</sup></citet>.
 #
-# To compile the most comprehensive set of drug gene interactions available, a search of the literature was conducted for existing published drug-gene interaction databases. A drug target definition was also sought that is both consistent with the definitions used to compile the constituent drug-gene interaction data sets, and with the idea of a drug target based on ligand binding supported by experimental evidence, as was aimed at in this study.
+# To compile the most comprehensive set of drug-gene interactions available, a search of the literature was conducted for existing published drug-gene interaction databases. A drug target definition was also sought that is both consistent with the definitions used to compile the constituent drug-gene interaction data sets, and with the idea of a drug target based on ligand binding supported by experimental evidence, as was aimed at in this study.
 #
 # Participating drugs were identified by at least an ATC code, a method of grouping drugs which provides both a useful ontology whilst allowing only approved drugs to take part in the analysis.
 #
@@ -204,7 +204,7 @@ if formatting == "LaTeX":
 #
 # To engineer the most effective pipeline, secondary aims were pursued of:
 #
-# * curating a drug gene interaction database with the greatest coverage of drugs, target genes and their interactions possible (Chapter \ref{curation-of-a-drug-target-interaction-database}); and
+# * curating a drug-gene interaction database with the greatest coverage of drugs, target genes and their interactions possible (Chapter \ref{curation-of-a-drug-target-interaction-database}); and
 # * ascertaining the advantages of using functional QTL annotation and the best methods of incorporating such data in the analysis (Chapter \ref{using-functional-qtl-gene-annotation-to-better-identify-genes-associated-with-disease}).
 #
 # The study validated the pipeline effectiveness by running and analysing results from diseases having known genetic architecture, comprehensive GWAS summary results and a large selection of effective drug treatments available - hyptertension and hypercholesterolemia were selected as fitting this criteria (Chapters \ref{appraisal-of-the-pipeline-performance-with-hypertension-and-hypercholesterolemia} and \ref{using-functional-qtl-gene-annotation-to-better-identify-genes-associated-with-disease}).

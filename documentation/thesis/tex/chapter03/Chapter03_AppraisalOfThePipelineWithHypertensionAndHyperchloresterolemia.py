@@ -108,7 +108,7 @@ if formatting == "LaTeX":
 #
 # Following this, the effect of the increment of gene targets added by DUGGIE over and above those present in STITCH was examined by looking at the relationship between gene count difference and p-value difference for drugs present in both drug-target interaction databases.
 #
-# To complete the presentation of evidence used to compare the two drug-ene interaction databases, for each disease the significant drugs identified were listed along with their respective DUGGIE and STITCH pipeline run association q-values, treatment drug indication and whether evidence exists of known drug side effects that affect blood pressure or cholesterol for hypertension and hypercholesterolemia respectively.
+# To complete the presentation of evidence used to compare the two drug-gene interaction databases, for each disease the significant drugs identified were listed along with their respective DUGGIE and STITCH pipeline run association q-values, treatment drug indication and whether evidence exists of known drug side effects that affect blood pressure or cholesterol for hypertension and hypercholesterolemia respectively.
 
 # ## Methods and materials
 

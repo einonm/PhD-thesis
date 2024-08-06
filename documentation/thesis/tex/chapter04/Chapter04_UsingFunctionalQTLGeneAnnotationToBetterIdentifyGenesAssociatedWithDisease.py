@@ -245,7 +245,8 @@ if formatting == "LaTeX":
                 caption=(r"List of compiled annotation data sets, describing the functional data sources and "
                          r"basic statistics for each. \normalfont{Contributing QTL sources are "
                          r"given for each annotation along with the method used to combine this functional "
-                         r"data with the proximity data, if applicable.}"
+                         r"data with the proximity data, if applicable. The total number of genes, the mean and "
+                         r"standard deviation of SNPs per gene are also given.}"
                         ),
                 label="tab:db_annotations",
                 escape=False,

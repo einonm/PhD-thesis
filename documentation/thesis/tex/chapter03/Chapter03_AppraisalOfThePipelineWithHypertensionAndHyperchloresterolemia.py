@@ -788,7 +788,7 @@ rdisp.display_joint_table_thesis(
     r"Significant hypertension drugs found by DUGGIE and STITCH. ",
     r"q-values in brackets are non-significant and included for completeness. "
     r"Drugs with no STITCH values are only present in the DUGGIE analysis. "
-    r"Columns are also incuded indicating if the drug is a known treatment drug "
+    r"Columns are also included indicating if the drug is a known treatment drug "
     r"and if the drug is known to affect blood pressure.",
     "tab:ht_sig_drugs",
 )

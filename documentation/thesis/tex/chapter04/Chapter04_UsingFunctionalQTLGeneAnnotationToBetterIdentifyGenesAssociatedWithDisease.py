@@ -161,7 +161,7 @@ if formatting == "LaTeX":
 #
 # The first is a 'missing gene' hybrid approach, where proximity annotation data is only used for genes where there is insufficient functional annotation data. So genes have either SNPs assigned according to functional evidence, or in the absence of sufficient functional evidence, SNPs assigned according to their proximity to the gene.
 #
-# The second method used is a 'combination' hybrid approach. For genes with only proximity data or only functional data, that data is used to annotate the gene. Where a gene has both proximity and functional SNP annotation data, these two sets of SNPs are combined by collating all SNPs in one list and removing any duplicates.
+# The second method used is a 'combination' hybrid approach. For genes with only a proximity annotation or only a functional annotation, that data is used to annotate the gene. Where a gene has both proximity and functional annotations, the two sets of SNPs from the proximity and functional annotations are combined by collating all SNPs in one list and removing any duplicates. The resultant list of SNPs is used to annotate the gene.
 
 # ### Datasets
 #

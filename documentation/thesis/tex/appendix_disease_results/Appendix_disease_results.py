@@ -250,7 +250,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             cmatrix_stats_df.to_latex(
-                column_format="p{4.5cm}p{1cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}",
+                column_format="p{4.5cm}p{1cm}R{1.5cm}R{1.5cm}p{1.5cm}R{1.5cm}R{1.5cm}",
                 multirow=True,
                 multicolumn=True,
                 index=False,
@@ -320,7 +320,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             sz_top_drugs_df.to_latex(
-                column_format=r"p{1cm}p{0.8cm}p{5.5cm}p{0.8cm}p{6cm}",
+                column_format=r"p{1cm}p{0.8cm}R{5.5cm}p{0.8cm}R{6cm}",
                 caption=r"Drugs ordered by frequency of appearance as significantly "
                         r"associated with schizophrenia across all annotations analysed. "
                         r"ATC drug codes are listed alongside the count of analyses in which the drug is "
@@ -389,7 +389,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             cmatrix_stats_df.to_latex(
-                column_format="p{4.5cm}p{1cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}",
+                column_format="p{4.5cm}p{1cm}R{1.5cm}R{1.5cm}p{1.5cm}R{1.5cm}R{1.5cm}",
                 multirow=True,
                 multicolumn=True,
                 index=False,
@@ -452,7 +452,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             mdd_top_drugs_df.to_latex(
-                column_format=r"p{1cm}p{0.8cm}p{5.5cm}p{0.8cm}p{6cm}",                                                                                                                              
+                column_format=r"p{1cm}p{0.8cm}R{5.5cm}p{0.8cm}R{6cm}",                                                                                                                              
                 caption=r"Drugs ordered by frequency of appearance as significantly "
                         r"associated with major depressive disorder across all annotations analysed. "
                         r"ATC drug codes are listed alongside the count of analyses in which the drug is "
@@ -521,7 +521,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             cmatrix_stats_df.to_latex(
-                column_format="p{4.5cm}p{1cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}",
+                column_format="p{4.5cm}p{1cm}R{1.5cm}R{1.5cm}p{1.5cm}R{1.5cm}R{1.5cm}",
                 multirow=True,
                 multicolumn=True,
                 index=False,
@@ -585,7 +585,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             bp_top_drugs_df.to_latex(
-                column_format=r"p{1cm}p{0.8cm}p{5.5cm}p{0.8cm}p{6cm}",                                                                                                                               
+                column_format=r"p{1cm}p{0.8cm}R{5.5cm}p{0.8cm}R{6cm}",                                                                                                                               
                 caption=r"Drugs ordered by frequency of appearance as significantly "
                         r"associated with bipolar disorder across all annotations analysed. "
                         r"ATC drug codes are listed alongside the count of analyses in which the drug is "
@@ -654,7 +654,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             cmatrix_stats_df.to_latex(
-                column_format="p{4.5cm}p{1cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}",
+                column_format="p{4.5cm}p{1cm}R{1.5cm}R{1.5cm}p{1.5cm}R{1.5cm}R{1.5cm}",
                 multirow=True,
                 multicolumn=True,
                 index=False,
@@ -717,7 +717,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             al_top_drugs_df.to_latex(
-                column_format=r"p{1cm}p{0.8cm}p{5.5cm}p{0.8cm}p{6cm}",
+                column_format=r"p{1cm}p{0.8cm}R{5.5cm}p{0.8cm}R{6cm}",
                 caption=r"Drugs ordered by frequency of appearance as significantly "
                         r"associated with Alzheimer's disease across all annotations analysed. "
                         r"ATC drug codes are listed alongside the count of analyses in which the drug is "
@@ -786,7 +786,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             cmatrix_stats_df.to_latex(
-                column_format="p{4.5cm}p{1cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}",
+                column_format="p{4.5cm}p{1cm}R{1.5cm}R{1.5cm}p{1.5cm}R{1.5cm}R{1.5cm}",
                 multirow=True,
                 multicolumn=True,
                 index=False,
@@ -849,7 +849,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             top_drugs_df.to_latex(
-                column_format=r"p{1cm}p{0.8cm}p{5.5cm}p{0.8cm}p{6cm}",
+                column_format=r"p{1cm}p{0.8cm}R{5.5cm}p{0.8cm}R{6cm}",
                 caption=r"Drugs ordered by frequency of appearance as significantly "
                         r"associated with Parkinson's disease across all annotations analysed. "
                         r"ATC drug codes are listed alongside the count of analyses in which the drug is "
@@ -918,7 +918,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             cmatrix_stats_df.to_latex(
-                column_format="p{4.5cm}p{1cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}",
+                column_format="p{4.5cm}p{1cm}R{1.5cm}R{1.5cm}p{1.5cm}R{1.5cm}R{1.5cm}",
                 multirow=True,
                 multicolumn=True,
                 index=False,
@@ -981,7 +981,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             hd_top_drugs_df.to_latex(
-                column_format=r"p{1cm}p{0.8cm}p{5.5cm}p{0.8cm}p{6cm}",
+                column_format=r"p{1cm}p{0.8cm}R{5.5cm}p{0.8cm}R{6cm}",
                 caption=r"Drugs ordered by frequency of appearance as significantly "
                         r"associated with Huntington's disease across all annotations analysed. "
                         r"ATC drug codes are listed alongside the count of analyses in which the drug is "

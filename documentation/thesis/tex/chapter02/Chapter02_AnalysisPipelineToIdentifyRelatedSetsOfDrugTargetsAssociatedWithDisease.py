@@ -209,7 +209,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             dbcriteria_df.to_latex(
-                column_format="lp{4cm}p{1.1cm}p{1.28cm}p{1.5cm}p{1cm}p{1cm}p{1cm}p{1cm}l",
+                column_format="lR{3.9cm}R{1.3cm}p{1.28cm}R{1.5cm}p{1cm}p{1cm}p{1cm}p{1cm}l",
                 multirow=True,
                 multicolumn=True,
                 index=False,

@@ -1439,12 +1439,13 @@ def display_joint_table_thesis(
                 display(HTML(table.to_html()))
 
         else:
+            table.drop(['P DUGGIE', 'P STITCH'], axis=1, inplace=True)
             if formatting == "LaTeX":
                 display(Latex(r"\scriptsize"))
                 display(
                     Latex(
                         table.to_latex(
-                            column_format="lp{2.8cm}p{0.8cm}p{1.2cm}p{1.4cm}p{0.9cm}p{1.2cm}p{1.4cm}p{0.9cm}p{0.8cm}",
+                            column_format="lR{3.4cm}p{1.6cm}R{1.5cm}p{1.6cm}R{1.5cm}p{1.2cm}p{1.2cm}",
                             multirow=True,
                             multicolumn=True,
                             caption=bold_caption
@@ -2138,7 +2139,7 @@ def show_treatment_drug_stats(dfs, db_col, sig):
         "Annotation",
         "Sig.",
         "Sig. Treatment",
-        "Sig. Non-Treatment",
+        "Sig. Non-treatment",
         "Non-sig.",
         "Non-sig. Treatment",
         "Non-sig. Non-treatment",
@@ -2194,7 +2195,7 @@ def show_treatment_drug_stats(dfs, db_col, sig):
             "Annotation": table_annot,
             "Sig.": len(TP_df) + len(FP_df),
             "Sig. Treatment": len(TP_df),
-            "Sig. Non-Treatment": len(FP_df),
+            "Sig. Non-treatment": len(FP_df),
             "Non-sig.": len(TN_df) + len(FN_df),
             "Non-sig. Treatment": len(FN_df),
             "Non-sig. Non-treatment": len(TN_df),

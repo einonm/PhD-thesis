@@ -378,7 +378,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             sz_top_novel_drugs.head(20).to_latex(
-                column_format=r"p{1cm}p{0.8cm}p{5cm}p{8cm}",
+                column_format=r"p{1cm}p{0.8cm}R{5cm}R{8cm}",
                 caption=r"Top 20 novel drugs, ordered by frequency of appearance as significantly "
                         r"associated with schizophrenia across all annotations analysed. "
                         r"ATC drug codes are listed alongside the count of analyses in which the drug is "
@@ -439,7 +439,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             sz_top_drug1_df.to_latex(
-                column_format=r"p{1.5cm}p{1.5cm}p{7cm}p{4cm}",
+                column_format=r"p{1.5cm}p{1.5cm}R{7cm}R{4cm}",
                 caption=r"Genes interacting with the drug magnesium sulfate according to the DUGGIE "
                         r"drug-gene interaction database with gene Z-score associations with schizophreina "
                         r"given for the "
@@ -1104,7 +1104,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             pd_top_novel_drugs.head(20).to_latex(
-                column_format=r"p{1cm}p{0.8cm}p{5cm}p{8cm}",                                                                                                                               
+                column_format=r"p{1cm}p{0.8cm}R{5cm}R{8cm}",                                                                                                                               
                 caption=r"Top 20 novel drugs, ordered by frequency of appearance as significantly "
                         r"associated with Parkinson's disease across all annotations analysed. "
                         r"ATC drug codes are listed alongside the count of analyses in which the drug is "

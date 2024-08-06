@@ -440,7 +440,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             ht_cmatrix_stats_df.to_latex(
-                column_format="p{2cm}p{1.2cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}p{3cm}",
+                column_format="p{2cm}p{1.2cm}p{2cm}R{1.2cm}p{1.2cm}p{1.4cm}R{3cm}",
                 multirow=True,
                 multicolumn=True,
                 index=False,
@@ -464,7 +464,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             ht_deriv_stats_df.to_latex(
-                column_format="p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}p{3cm}",
+                column_format="p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}p{3.5cm}p{1cm}",
                 multirow=True,
                 multicolumn=True,
                 index=False,
@@ -975,7 +975,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             hc_cmatrix_stats_df.to_latex(
-                column_format="p{2cm}p{1.2cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}p{3cm}",
+                column_format="p{2cm}p{1.2cm}p{2cm}R{1.2cm}p{1.2cm}p{1.4cm}R{3cm}",
                 multirow=True,
                 multicolumn=True,
                 index=False,

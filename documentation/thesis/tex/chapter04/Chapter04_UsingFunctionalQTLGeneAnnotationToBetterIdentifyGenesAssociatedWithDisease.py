@@ -438,7 +438,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             ht_cmatrix_stats_df.to_latex(
-                column_format="p{3.2cm}p{1.1cm}p{2cm}p{1.8cm}p{1.6cm}p{2cm}p{2cm}",
+                column_format="p{3.2cm}p{1.1cm}p{2cm}R{1.5cm}p{1.6cm}R{2cm}R{2cm}",
                 multirow=True,
                 multicolumn=True,
                 index=False,
@@ -888,14 +888,14 @@ dummy = ht_dgi_stats_style.format("{:.0f}", subset=['Blood Sig.',
 if formatting == "HTML":
     display(HTML(ht_dgi_stats_df.to_html()))
 if formatting == "LaTeX":
-    display(Latex(r"\scriptsize"))
+    display(Latex(r"\tiny"))
     display(
         Latex(
             ht_dgi_stats_style.to_latex(
                 environment="longtable",
                 hrules=True,
-                column_format=r"l|p{0.35cm}p{0.25cm}p{0.25cm}|p{0.3cm}p{0.3cm}p{0.45cm}|"
-                              r"p{1.01cm}p{1.01cm}p{1.01cm}|p{1.01cm}p{1.01cm}p{1.01cm}",
+                column_format=r"l|p{0.35cm}p{0.25cm}p{0.25cm}|p{0.4cm}p{0.4cm}p{0.55cm}|"
+                              r"p{1.01cm}p{1.01cm}p{1.01cm}|p{0.95cm}p{0.95cm}p{0.95cm}",
                 caption=r"Table of basic gene set analysis results analysing hypertension from multiple runs of a gene-set "
                         r"analysis pipeline differing in the gene annotation used, comparing the "
                         r"tissue specific functional annotations."
@@ -1237,7 +1237,7 @@ if formatting == "LaTeX":
     display(
         Latex(
             hc_cmatrix_stats_df.to_latex(
-                column_format="p{3.2cm}p{1.1cm}p{2cm}p{1.8cm}p{1.6cm}p{2cm}p{2cm}",
+                column_format="p{3.2cm}p{1.1cm}p{2cm}R{1.5cm}p{1.6cm}R{2cm}R{2cm}",
                 multirow=True,
                 multicolumn=True,
                 index=False,
@@ -1678,14 +1678,14 @@ dummy = hc_dgi_stats_style.format("{:.0f}", subset=['Blood Sig.',
 if formatting == "HTML":
     display(HTML(hc_dgi_stats_df.to_html()))
 if formatting == "LaTeX":
-    display(Latex(r"\scriptsize"))
+    display(Latex(r"\tiny"))
     display(
         Latex(
             hc_dgi_stats_style.to_latex(
                 environment="longtable",
                 hrules=True,
-                column_format=r"l|p{0.35cm}p{0.25cm}p{0.25cm}|p{0.3cm}p{0.3cm}p{0.45cm}|"
-                              r"p{1.01cm}p{1.01cm}p{1.01cm}|p{1.01cm}p{1.01cm}p{1.01cm}",
+                column_format=r"l|p{0.35cm}p{0.25cm}p{0.25cm}|p{0.4cm}p{0.4cm}p{0.55cm}|"
+                              r"p{1.01cm}p{1.01cm}p{1.01cm}|p{0.95cm}p{0.95cm}p{0.95cm}",
                 caption=r"Table of basic gene set analysis results analysing hypercholesterolemia from multiple runs of a gene-set "
                         r"analysis pipeline differing in the gene annotation used, comparing the "
                         r"tissue specific functional annotations."

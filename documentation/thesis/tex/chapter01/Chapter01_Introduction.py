@@ -127,7 +127,7 @@ if formatting == "LaTeX":
 #
 # The pipeline has two main analysis steps - a gene analysis, where the disease-SNP association p-values are mapped to disease-gene association p-vales and a gene-set analysis step where the target gene set of each drug is competitively analysed against the set of disease associated genes to obtain the final drug-gene p-value. Both of these steps are implemented by the MAGMA tool. The steps and data inputs of the pipeline analysis are shown in Figure \ref{fig:summary-analysis}, described in more detail below.
 #
-# As a secondary input, the gene set analysis part of the pipeline requires a translation from the SNPs associated with the disease to genes along with the association p-values. This study will use several such annotation methods - positional, QTL functional and hybrids of these two to generate separate gene annotations which can be run in parallel as part of an analysis to aid in comparing their relative merits. The selection of these annotation methods is explored in Chapter \ref{using-functional-qtl-gene-annotation-to-better-identify-genes-associated-with-disease}, but prior to this activity the default MAGMA positional annotation will be used as a reference in order to compare other features of the pipeline.
+# As a secondary input, the gene set analysis part of the pipeline requires a translation from the SNPs associated with the disease to genes along with the association p-values. This study will use several such annotation methods - positional, QTL functional and hybrids of these two to generate separate gene annotations which can be run in parallel as part of an analysis to aid in comparing their relative merits. The selection of these annotation methods is explored in chapter \ref{using-functional-qtl-gene-annotation-to-better-identify-genes-associated-with-disease}, but prior to this activity the default MAGMA positional annotation will be used as a reference in order to compare other features of the pipeline.
 
 if formatting == "LaTeX":
     display(Latex(r"\begin{figure}[htpb]"))
@@ -204,12 +204,12 @@ if formatting == "LaTeX":
 #
 # To engineer the most effective pipeline, secondary aims were pursued of:
 #
-# * curating a drug-gene interaction database with the greatest coverage of drugs, target genes and their interactions possible (Chapter \ref{curation-of-a-drug-target-interaction-database}); and
-# * ascertaining the advantages of using functional QTL annotation and the best methods of incorporating such data in the analysis (Chapter \ref{using-functional-qtl-gene-annotation-to-better-identify-genes-associated-with-disease}).
+# * curating a drug-gene interaction database with the greatest coverage of drugs, target genes and their interactions possible (chapter \ref{curation-of-a-drug-target-interaction-database}); and
+# * ascertaining the advantages of using functional QTL annotation and the best methods of incorporating such data in the analysis (chapter \ref{using-functional-qtl-gene-annotation-to-better-identify-genes-associated-with-disease}).
 #
-# The study validated the pipeline effectiveness by running and analysing results from diseases having known genetic architecture, comprehensive GWAS summary results and a large selection of effective drug treatments available - hyptertension and hypercholesterolemia were selected as fitting these criteria (Chapters \ref{appraisal-of-the-pipeline-performance-with-hypertension-and-hypercholesterolemia} and \ref{using-functional-qtl-gene-annotation-to-better-identify-genes-associated-with-disease}).
+# The study validated the pipeline effectiveness by running and analysing results from diseases having known genetic architecture, comprehensive GWAS summary results and a large selection of effective drug treatments available - hyptertension and hypercholesterolemia were selected as fitting these criteria (chapters \ref{appraisal-of-the-pipeline-performance-with-hypertension-and-hypercholesterolemia} and \ref{using-functional-qtl-gene-annotation-to-better-identify-genes-associated-with-disease}).
 #
-# Finally, the study aimed to use the curated datasets and validated, highly automated pipeline to identify novel approved drug repurposing opportunities for schizophrenia, major depressive disorder, bipolar disorder, Alzheimer's disease, Parkinson's disease and Huntington's disease (Chapter \ref{application-of-the-analysis-pipeline-to-neuropsychiatric-and-neurodegenerative-diseases}).
+# Finally, the study aimed to use the curated datasets and validated, highly automated pipeline to identify novel approved drug repurposing opportunities for schizophrenia, major depressive disorder, bipolar disorder, Alzheimer's disease, Parkinson's disease and Huntington's disease (chapter \ref{application-of-the-analysis-pipeline-to-neuropsychiatric-and-neurodegenerative-diseases}).
 
 # ## In-silico development
 #

@@ -1087,7 +1087,7 @@ dummy = usp.plot(usp.from_indicators(drug_sets_df),
 
 rdisp.end_caption(formatting, r"fig:ht_upset_0_3")
 
-# Looking at figure \ref{fig:ht_upset_4_plus} of higher degree overlaps, particularly the bottom left of the matrix which has a high density of dots, it can be seen that the drugs appearing as enriched under the greatest number of annotations also appear heavily in the sets with the highest tallies, with no grouping of drugs appearing to be specific to analyses with lower numbers of significantly associated drugs. This implies that generally, the annotations achieving higher rates of significant enrichment are supplementing and not replacing drugs found by annotations with lower rates of significant enrichment and that there is a degree of consensus between all annotations.
+# Looking at figure \ref{fig:ht_upset_4_plus} of higher degree overlaps, particularly the bottom left of the matrix which has a high density of dots, it can be seen that in general the drugs identified by the largest number of annotations are also found by those annotations identifying the largest number of drugs such as the annotation labelled 'DUGGIE AlleQTLs-mQTL-comb'. Conversely, very few drugs appear to be specific to groups of annotations identifying lower numbers of significantly associated drugs. This implies that generally, the annotations achieving higher rates of significant enrichment are confirming the findings of annotations with lower rates of significant enrichment and that there is a degree of consensus between all annotations.
 
 bold_caption = (
     r"UpSet plot showing the overlap of drug sets identified to be significantly associated with hypertension "

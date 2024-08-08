@@ -155,7 +155,7 @@ if formatting == "LaTeX":
 
 # ### Drug-gene interaction datasets
 #
-# The drug-gene interaction data sources were obtained from the literature search, either directly as the subject of a publication or from references within a publication. To enable the datasets that are extracted from these sources to be combined, a common data format was needed. To this end, each individual extracted dataset uses PubChem Compound IDs to identify drugs and/or an ATC code. Entrez Gene IDs are used to identify targets. Evidence sources for each drug-gene interaction is a PubMed identifier (PMID) by default.
+# The drug-gene interaction data sources were obtained by conducting a literature search for this study, either directly as the subject of a publication or from references within a publication. To enable the datasets that are extracted from these sources to be combined, a common data format was needed. To this end, each individual extracted dataset uses PubChem Compound IDs to identify drugs and/or an ATC code. Entrez Gene IDs are used to identify targets. Evidence sources for each drug-gene interaction is a PubMed identifier (PMID) by default.
 #
 # Two data sets for each source were produced - firstly the interaction data lists PubChem CIDs / ATC codes for each drug with an Entrez Gene ID list. Second, the evidence table having one entry per drug-gene interaction, per piece of evidence. A description of each database and an outline of how these tables were extracted can be found in Appendix \ref{appendix-drug-gene-interaction-datasets}.
 
@@ -163,7 +163,7 @@ if formatting == "LaTeX":
 
 # ### Literature search results
 #
-# The initial PubMed search resulted in a list of 646 publications (\hyperref[supp:sf1]{Supplementary File 1}) which after manual curation reduced to 24 papers directly describing drug-gene interaction databases (\hyperref[supp:sf2]{Supplementary File 2}). After removing those which no longer have data available and adding other drug-gene interaction database publications referenced from the set of curated PubMed papers provided a list of 75 publications. These publications describe a total of 19 drug-gene interaction databases, listed in table \ref{tab:dgi_dbs}.
+# The initial PubMed search as conducted as part of this study resulted in a list of 646 publications (\hyperref[supp:sf1]{Supplementary File 1}) which after manual curation reduced to 24 papers directly describing drug-gene interaction databases (\hyperref[supp:sf2]{Supplementary File 2}). After removing those which no longer have data available and adding other drug-gene interaction database publications referenced from the set of curated PubMed papers provided a list of 75 publications. These publications describe a total of 19 drug-gene interaction databases, listed in table \ref{tab:dgi_dbs}.
 #
 # ### Criteria check results
 #

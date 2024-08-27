@@ -216,6 +216,44 @@ if formatting == "LaTeX":
 #
 # Finally Receiver-Operator Characteristic (ROC) curves are plotted for each analysis and the corresponding Area Under the Curve (AUC) values calculated. These give a measure of the ability of the analysis to correctly classify a drug as treatment or non-treatment.
 
+# ## Other in-silico methods for predicting drug repurposing opportunities
+#
+# Alongside gene set analysis, a variety of other in-silico approaches have been proposed and employed for predicting drug-disease relationships which have, or can be, used to prioritise drug repurposing opportunities to treat complex diseases, both genetic and non-genetic in nature.
+#
+# Broadly speaking, genetic approaches have built upon common variants identified from GWAS studies <REF> and seek further to incorporate functional genomic and other 'omic' data, given that the majority of disease-associated genomic loci have been found to occur in non-coding regions of the genome and influence disease through gene regulation as opposed to non-synonymous coding variations<citet data-cite="maurano_systematic_2012"><sup>maurano</sup></citet>. Such genetic approaches are Transcriptome-Wide Association Studies (TWASs), colocalisation analysis and Mendelian randomisation<citet data-cite="qi_genetic_2024"><sup>qi</sup></citet>. Another drug repurposing method that analyses rare variants is allelic series analysis<citet data-cite="mccaw_allelic-series_2023"><sup>mccaw</sup></citet>, discussed below.
+#     
+# Amongst the non-genetic approaches that have been utilised to aid drug repurposing efforts have been mining a compendium of available gene expression profiles, for example using the Commectivity Map and CLUE platform<citet data-cite="subramanian_next_2017"><sup>subramanian</sup></citet>, AI-based tools such as natural language processing (NLP)<citet data-cite="zong_computational_2022"><sup>zong</sup></citet> and high-throughput virtual screening<citet data-cite="singh_advances_2024"><sup>singh24</sup></citet> and finally target trial emulation<citet data-cite="matthews_target_2022"><sup>targett</sup></citet>, which applies the principles of randomised trials to observational studies. These are also introduced below.
+#
+# #### TWAS
+#
+# A transcriptome-wide association study (TWAS)<citet data-cite="gamazon_gene-based_2015"><sup>gamazon</sup></citet> attempts to combine GWAS summary statistics with tissue-specific gene expression weights to calculate association statistics between gene expression levels and a trait or disease, resulting in predictions of mRNA expression covariance with the disease. Drug candidate repurposing opportunities are those drugs which are understood to interact with genes having high expression covariance with the disease and induce the reverse expression signature, where the TWAS-predicted direction of expression change is reversed by the drug's action.
+#
+# #### Mendelian randomization 
+#     
+# Mendelian Randomisation (MR)<citet data-cite="smith_mendelian_2003"><sup>smithm</sup></citet> is a tool used to explore causal relationships based on the principles of a randomised control trial (RCT). Whereas an RCT typically involves planned interventions to groups of random individuals to investigate the effect of an exposure (i.e. a drug) on an outcome (i.e. a disease), MR is observational, involving genetic variants (SNPs) as instrumental variables (IVs) which are naturally randomised in the population, hence Mendelian, and strongly associated with the exposure, but do not directly affect the outcome except through the exposure. Hence there are three assumptions that are frequently stated that must be true regarding a Mendelian randomisation IV: It must be associated with the exposure, independent of any variables that can influence both the exposure and the outcome (confounders) and does not directly influence the outcome, given the exposure and confounders<citet data-cite="davies_reading_2018"><sup>davies</sup></citet>. 
+#     
+# Originally, MR analyses were based on a single sample measuring both the outcome and exposure, later extended to 'two-sample' MR where the outcome and exposure measurements are made on different independent samples. Two-sample MR enables summary data analyses to be performed, known as Summary-data based Mendelian Randomisation (SMR)<citet data-cite="zhu_integration_2016"><sup>zhusmr</sup></citet>, incorporating cis-eQTL data to test if IVs mediate an effect on disease through gene expression<citet data-cite="liu_genome-wide_2023"><sup>liusmr</sup></citet>. As eQTLs have been shown to only account for ~10% of heritability<citet data-cite="yao_quantifying_2020"><sup>yaosmr</sup></citet>, other functional QTL data such as protein-abundance QTLs (pQTLs) have been used to perform adjunct SMR analyses<citet data-cite="liu_genome-wide_2023"><sup>liusmr</sup></citet>. Where the pQTL proteins of interest are druggable, the MR analysis can be referred to as 'drug-target MR'<citet data-cite="schmidt_genetic_2020"><sup>schmidt</sup></citet>. 
+#
+# #### Colocalisation 
+#
+# Colocalisation<citet data-cite="giambartolomei_bayesian_2014"><sup>giamb</sup></citet> is a technique to ascertain if the genetic association signals from two (or more<citet data-cite="giambartolomei_bayesian_2018"><sup>giamb2</sup></citet>) association signals are consistent with a shared causal variant, often GWAS and eQTL signals are compared. The technique can also be used to validate the assumptions of MR analyses by testing if the IV-exposure association and IV-outcome effect are driven by the same signal<citet data-cite="reay_advancing_2021"><sup>reay</sup></citet>.
+#     
+# #### allelic series analysis
+#     
+# An allelic series is a set of variants in a gene or pathway in which increasingly deleterious mutations have increasingly large phenotypic effects, which can be identified using methods such as the Coding-Variant Allelic-Series Test (COAST)<citet data-cite="mccaw_allelic-series_2023"><sup>mccaw</sup></citet>. Genes implicated in this way for disease phenotypes are of interest as if they are also druggable, drugs targeting them may also be of therapeutic benefit.
+#     
+# #### Connectivity Map
+#     
+# The connectivity map (CMAP)<citet data-cite="subramanian_next_2017"><sup>subramanian</sup></citet> is a compendium of experimentally obtained protein expression changes induced in a selection of tissue types from perturbation by various compounds, including drugs. Similar to the TWAS approach, these gene signatures can be matched to gene expression changes associated with a disease phenotype to identify candidate therapeutic drugs<citet data-cite="wu_cmap-enabled_2019"><sup>wu</sup></citet>, including approved drugs for repurposing.
+#     
+# #### AI based approaches
+#     
+# Artificial Intelligence has recently gained popularity for data-intensive research, including drug discovery<citet data-cite="singh_advances_2024"><sup>singh24</sup></citet>, with a wide range of machine learning (ML) and deep neural nets (DNN) techniques employed to perform tasks such as predicting drug-target interactions<citet data-cite="huang_deeppurpose_2021"><sup>huang21</sup></citet>, and virtual screening<citet data-cite="singh_advances_2024"><sup>singh24</sup></citet>, which attempt to mine large target-based datasets in order to match potential drugs to genes involved in disease.
+#     
+# #### Target trial emulation
+#     
+# Target trial emulation is an method that improves the quality of causal inference from observational studies by emulating the design principles of randomized controlled trials (RCTs)<citet data-cite="matthews_target_2022"><sup>targett</sup></citet>. A protocol is designed according to a framework, in order to estimate the effect of interventions before any data is used to emulate the trial using observational data. This aims to remove any biases common to observational studies. This enables target trial emulation to be carried out using real world data study multiple drug repurposing opportunities to treat a disease, for example Alzheimers<citet data-cite="zang_high-throughput_2023"><sup>zang23</sup></citet>.
+
 # ## Aim of this study
 #
 # The principal aim of this study was to develop and utilise a novel approach that can identify novel drug repurposing opportunities for neuropsychiatric and neurodegenerative diseases by curating and utilising the most up to date genomic, functional, disease and drug-gene interaction datasets, conducting gene set analyses using a well-established method implemented by the MAGMA tool and automating a pipeline to execute it. Such a pipeline can significantly associate suitable drugs with a disease and further rank these significantly associated drugs. 

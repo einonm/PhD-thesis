@@ -1,0 +1,6 @@
+thesis_supplimentary_data/SF3-DUGGIE_DGI_DB.zip filter=lfs diff=lfs merge=lfs -text
+thesis_supplimentary_data/SF4-STITCH_DGI_DB.zip filter=lfs diff=lfs merge=lfs -text
+thesis_supplimentary_data/SF5-code_archive.zip filter=lfs diff=lfs merge=lfs -text
+thesis_supplimentary_data/SF6-appendix-B_archive.zip filter=lfs diff=lfs merge=lfs -text
+thesis_supplimentary_data/SF1-dti_lit_search_full.zip filter=lfs diff=lfs merge=lfs -text
+thesis_supplimentary_data/SF2-dti_lit_search_filtered.zip filter=lfs diff=lfs merge=lfs -text

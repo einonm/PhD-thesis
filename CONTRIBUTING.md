@@ -1,7 +1,7 @@
 # Contributing to this project
 Thank you for your interest in contributing! This guide details how to contribute in a way that is easy for everyone.
 
-The following is a set of guidelines for contributing to this project hosted in the DPMCN Code Bank group on [Cardiff University's GitLab service](https://git.cardiff.ac.uk).
+The following is a set of guidelines for contributing to this project.
 These are mostly guidelines, not rules. Use your best judgement, and feel free to propose changes to this document in a merge request.
 
 ## Code of Conduct
@@ -9,10 +9,7 @@ We want to create a welcoming environment for everyone who is interested in cont
 
 ## Reporting Issues
 Found a problem? Want to propose a new feature? First of all see if your issue or idea has [already been reported](../../issues).
-If not, just open a [new clear and descriptive issue](../../issues/new), the [DPMCN wiki reporting issues guide](https://wiki.psycm.cf.ac.uk/wiki/index.php/Reporting_issues#Reporting_issues) may help with what to include.
-
-## Just have a question?
-Support and updates for this project can be found on the [DPMCN Research Software slack channel](https://dpmcnresearchsoftware.slack.com). Access to the channel can usually be granted to DPMCN members by contacting the DPMCN systems engineering team on hpc-help@cardiff.ac.uk and agreeing to the [DPMCN Research Software Policy](https://wiki.psycm.cf.ac.uk/wiki/index.php/DPMCN_research_software_policy).
+If not, just open a [new clear and descriptive issue](../../issues/new).
 
 ## Submitting changes
 The general flow of making a contribution to this project, such as a bug fix, documentation update or feature implementation is:
